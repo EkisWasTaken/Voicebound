@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#3a2a6e"/>
+      <stop offset="0.55" stop-color="#1c1438"/>
+      <stop offset="1" stop-color="#08060f"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#6fe0ff" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#6fe0ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff1b8"/>
+      <stop offset="0.35" stop-color="#f2c75c"/>
+      <stop offset="0.7" stop-color="#b9842a"/>
+      <stop offset="1" stop-color="#6b4511"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe79a"/>
+      <stop offset="0.5" stop-color="#a8741f"/>
+      <stop offset="1" stop-color="#4a2f08"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b8f3ff"/>
+      <stop offset="1" stop-color="#35b6e6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background + beveled gold frame, WoW-icon style -->
+  <rect x="0" y="0" width="400" height="400" rx="56" fill="url(#rim)"/>
+  <rect x="14" y="14" width="372" height="372" rx="44" fill="#140d06"/>
+  <rect x="22" y="22" width="356" height="356" rx="38" fill="url(#bg)"/>
+  <circle cx="200" cy="200" r="150" fill="url(#glow)"/>
+
+  <!-- sound waves -->
+  <g fill="none" stroke="url(#wave)" stroke-linecap="round">
+    <path d="M108 140 Q76 200 108 260" stroke-width="18"/>
+    <path d="M292 140 Q324 200 292 260" stroke-width="18"/>
+    <path d="M72 108 Q24 200 72 292" stroke-width="12" opacity="0.6"/>
+    <path d="M328 108 Q376 200 328 292" stroke-width="12" opacity="0.6"/>
+  </g>
+
+  <!-- V sigil -->
+  <path d="M128 100 H180 L200 196 L220 100 H272 L224 304 H176 Z"
+        fill="url(#gold)" stroke="#2a1a05" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M148 112 H172 L196 222" fill="none" stroke="#fff6d0" stroke-width="5"
+        stroke-linecap="round" opacity="0.7"/>
+  <!-- small rune gem at the point -->
+  <path d="M200 318 L214 336 L200 354 L186 336 Z" fill="#6fe0ff" stroke="#0b3a4a" stroke-width="4"/>
+</svg>

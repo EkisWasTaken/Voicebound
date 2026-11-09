@@ -1,0 +1,5 @@
+release/
+__pycache__/
+*.pyc
+# DB2 CSV downloads used by tools/gen_voicemapping.py
+RaceVoiceSelector/tools/*.csv

@@ -1,0 +1,15 @@
+## Interface: 16001
+## Title: |cffe8b84bVoicebound|r
+## Notes: Speak with any race's voice. Swap your character's voice lines ("Not enough energy!", emotes) to another race for this session. /rvs
+## Author: EkisWasTaken
+## Version: 1.0.0
+## IconTexture: Interface\AddOns\RaceVoiceSelector\Media\icon
+## Category: Audio & Video
+## SavedVariables: VoiceboundDB
+## AddonCompartmentFunc: Voicebound_OnCompartmentClick
+
+VoiceMapping.lua
+Core.lua
+UI.lua
+Commands.lua
+Minimap.lua

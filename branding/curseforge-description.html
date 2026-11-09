@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voicebound Description</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; background: #fff; color: #222; line-height: 1.5; }
+  .bar { position: sticky; top: 0; background: #1c1438; color: #f2c75c; padding: 12px 16px; border-radius: 8px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .bar button { font: inherit; font-weight: 600; padding: 8px 14px; border: 0; border-radius: 6px; background: #f2c75c; color: #1c1438; cursor: pointer; }
+  .bar span { color: #fff; font-size: 14px; }
+  h3.label { margin-top: 32px; color: #888; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+  .box { border: 1px dashed #bbb; border-radius: 8px; padding: 4px 20px; }
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <button data-target="summary">Copy summary</button>
+  <button data-target="desc">Copy description</button>
+  <span id="msg">Click a button, then paste into the matching CurseForge field (Ctrl+V).</span>
+</div>
+
+<h3 class="label">Summary field (one line)</h3>
+<div class="box" id="summary">
+<p>Having an identity crisis? Give your character any race's voice. Troll body, Dwarf soul.</p>
+</div>
+
+<h3 class="label">Description field</h3>
+<div class="box" id="desc">
+
+<h2>Having an identity crisis? Voicebound has you covered.</h2>
+
+<p>Your Troll has always felt like a Dwarf on the inside. Your Undead misses the big, booming laugh of a Tauren. Your Gnome would like to sound seven feet tall, just once.</p>
+
+<p><strong>Voicebound lets your character speak with any other race's voice.</strong> No race change, no barber, no paid service, no therapy needed.</p>
+
+<h3>What gets the makeover</h3>
+<ul>
+  <li><strong>Every "I can't do that" moment.</strong> "Not enough energy!", "Not enough mana", "Out of range", "That ability isn't ready yet", "I have no target", "My inventory is full"... about 49 lines in all.</li>
+  <li><strong>Your emotes.</strong> /laugh, /cheer, /cry, /sigh, /joke, /thank, /bye, /no and /nod, plus the battle calls /attacktarget, /incoming, /flee and /healme.</li>
+</ul>
+
+<h3>Find your true voice in 30 seconds</h3>
+<ol>
+  <li>Click the <strong>Voicebound button</strong> on your minimap (or type <strong>/rvs</strong>).</li>
+  <li>Pick a <strong>race</strong> and <strong>gender</strong>.</li>
+  <li>Tick <strong>Enable Voice Override</strong>. That's it.</li>
+</ol>
+<p>Not sure yet? Hit <strong>Test Voice</strong> to audition every line before you commit. Changed your mind? Right-click the minimap button to switch back instantly.</p>
+
+<p><strong>Voices:</strong> Human, Orc, Dwarf, Night Elf, Undead, Tauren, Gnome and Troll, male or female.</p>
+
+<h3>The fine print</h3>
+<ul>
+  <li><strong>The real voices.</strong> Original Blizzard recordings only. No AI voices, nothing fake.</li>
+  <li><strong>Your secret is safe.</strong> Only you hear the new voice. Everyone else still hears your character's normal one.</li>
+  <li><strong>No commitment.</strong> It lasts for your play session. Log out and you're yourself again.</li>
+  <li><strong>Nothing to install.</strong> No game files changed, no extra programs.</li>
+  <li><strong>Combat grunts and death cries stay the same.</strong> The game gives addons no way to change those.</li>
+</ul>
+
+<h3>Commands</h3>
+<ul>
+  <li><strong>/rvs</strong> or <strong>/voicebound</strong>: open the window</li>
+  <li><strong>/rvs on</strong>, <strong>/rvs off</strong>: voice override on or off</li>
+  <li><strong>/rvs race dwarf</strong>, <strong>/rvs gender female</strong>: choose a voice</li>
+  <li><strong>/rvs reset</strong>: back to your own voice</li>
+  <li><strong>/rvs minimap</strong>: hide or show the minimap button</li>
+</ul>
+
+<p><em>Built for WoW Forever.</em></p>
+</div>
+
+<script>
+  // Copies the box as rich text so the CurseForge editor keeps headings and bullets.
+  document.querySelectorAll('.bar button').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var range = document.createRange();
+      range.selectNodeContents(document.getElementById(btn.dataset.target));
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (e) {}
+      document.getElementById('msg').textContent = ok
+        ? 'Copied. Paste it into the CurseForge field with Ctrl+V.'
+        : 'Text is selected. Press Ctrl+C, then paste into CurseForge.';
+    });
+  });
+</script>
+</body>
+</html>
